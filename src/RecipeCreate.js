@@ -37,6 +37,7 @@ function RecipeCreate(props) {
                 style={{ width: "100%" }}
                 onChange={handleChange}
                 value={formData.name}
+                required
               />
             </td>
             <td>
@@ -47,6 +48,7 @@ function RecipeCreate(props) {
                 style={{ width: "100%" }}
                 onChange={handleChange}
                 value={formData.cuisine}
+                required
               />
             </td>
             <td>
@@ -67,6 +69,7 @@ function RecipeCreate(props) {
                 style={{ width: "100%" }}
                 onChange={handleChange}
                 value={formData.ingredients}
+                required
               />
             </td>
             <td>
@@ -77,6 +80,7 @@ function RecipeCreate(props) {
                 style={{ width: "100%" }}
                 onChange={handleChange}
                 value={formData.preparation}
+                required
               />
             </td>
             <td>

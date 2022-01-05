@@ -1,7 +1,7 @@
 import React from "react";
+import DeleteButton from "./DeleteButton";
 
 function RecipeList(props) {
-
   const rows = props.recipes.map((recipe, index) => (
     <tr key={index} id={index}>
       <td>{recipe.name}</td>
@@ -16,24 +16,10 @@ function RecipeList(props) {
         <p>{recipe.preparation}</p>
       </td>
       <td>
-        <button name="delete" onClick={deleteRecipe}>
-          Delete
-        </button>
+        <DeleteButton recipes={props.recipes} setRecipes={props.setRecipes} />
       </td>
     </tr>
   ));
-
-  function deleteRecipe(event) {
-    const filtRecipes = props.recipes.filter(
-      // eslint-disable-next-line eqeqeq
-      (item, index) => index != event.target.parentNode.parentNode.id
-    );
-    props.setRecipes(filtRecipes);
-  }
-
-  // TODO: Display the list of recipes using the structure of table that is provided.
-  // TODO: Create at least one additional component that is used by this component.
-  // TODO: Each recipe row must have a delete button - <button name="delete">Delete</button> - that deletes the post when clicked
 
   return (
     <div className="recipe-list">
